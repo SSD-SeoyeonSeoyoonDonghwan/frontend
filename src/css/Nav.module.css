@@ -1,0 +1,33 @@
+.nav {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    padding: 38px 68px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  ul.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: 'diaGothicLight';
+    color: #FFFFFF;
+  }
+  
+  ul.menu > li:not(:last-child) {
+    margin-right: 47px;
+    font-family: 'diaGothicLight';
+    color: #FFFFFF;
+    font-size: 18px;
+    text-decoration: none;
+  }

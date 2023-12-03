@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* font */
+
+/*Bold*/
+@font-face {            
+    font-family: diaGothicBold;
+    src: url(./KBO\ Dia\ Gothic_bold.woff);
+}
+/*Midium*/
+@font-face {
+    font-family: diaGothicMedium;
+    src: url(./KBO\ Dia\ Gothic_medium.woff);
+}
+/*Light*/
+@font-face {
+    font-family: diaGothicLight;
+    src: url(./KBO\ Dia\ Gothic_light.woff);
+}
+@font-face {
+    font-family: luckiestGuyRegular;
+    src: url(./LuckiestGuy-Regular.woff);
+}

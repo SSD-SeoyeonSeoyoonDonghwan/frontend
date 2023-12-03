@@ -1,0 +1,36 @@
+version: '1'
+
+services:
+  app:
+    image: ycdoit/ssd-money:latest
+    ports:
+      - 8080:8080
+    environment:
+      - spring.profiles.active=docker
+      - DATABASE_HOST=mysql
+      - OTHER_ENV_VARIABLES=other_values
+    depends_on:
+      - mysql
+    networks:
+      - springboot-mysql
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: money
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - springboot-mysql
+
+networks:
+  springboot-mysql:
+    driver: bridge
+
+volumes:
+  mysql-data:
