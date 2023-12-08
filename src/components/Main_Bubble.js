@@ -3,6 +3,7 @@ import Bubble from '../assets/img/Main_Bubble.png'
 
 function Main_Bubble () {
 
+    // 마우스 올렸을 때 bubble 보이게
     const [isHovered, setIsHovered] = useState(false);
 
     function handleMouseEnter() {
