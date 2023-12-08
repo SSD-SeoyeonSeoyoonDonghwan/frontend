@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from '../components/Nav'
 import style from '../css/mainPage.module.css'
 // import style2 from '../main.module.css'
 import Yellow from '../assets/img/Main_Yellow.png'
+import Yellow2 from '../assets/img/Main_Yellow2.png'
 import BtnPink from '../components/Btn_pink'
 import BtnChat from '../components/Btn_Chat'
 import BtnDia from "../components/Btn_Dia"
@@ -12,13 +13,31 @@ import MainHandling from '../components/Main_handling'
 
 function MainPage() {
 
+  const [isHovered, setIsHovered] = useState(false);
+  
+  function handleMouseEnter() {
+    setIsHovered(true);
+  }
+
+  function handleMouseLeave() {
+    setIsHovered(false);
+  }
+
   return (
     <div>
       <Nav />
 
       <div className={style.box}>
         <div className={style.left}>
-          <img className={style.yellow} alt="yellow" src={Yellow} />
+          <div
+            className={style.yellow}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}  
+          >
+            {isHovered ? 
+              (<img src={Yellow2} alt="yellow"/>) : (<img src={Yellow} alt="default" />)
+            }
+          </div>
           <p className={style.text1}>오늘의 총 소비</p>
           <Bubble />
 
@@ -31,6 +50,7 @@ function MainPage() {
           <div className={style.calc}>
             <p className={style.text2}>1,800</p>
             <p className={style.text3}>won</p>
+            <BtnDia />
           </div>
 
         
@@ -40,12 +60,10 @@ function MainPage() {
           <a href="./SignInPage3">회원가입3</a>
         </div>
         <BtnCircle />
-        <BtnDia />
+        
         <div className={style.right}>
-          {/* <img className={style.bg2} alt="bg2" src={Img2} /> */}
           <BtnChat />
           <MainHandling />
-          {/* <img className={style.bg1} alt="bg1" src={Img1} /> */}
           <BtnPink />
         </div>
       </div>
