@@ -1,18 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import Star from '../assets/img/Main_Star1.png'
+import Star2 from '../assets/img/Main_Star2.png'
+
 
 function Btn_Chat () {
+    
+    const [isHovered, setIsHovered] = useState(false);
+
+    function handleMouseEnter() {
+        setIsHovered(true);
+    }
+    function handleMouseLeave(){
+        setIsHovered(false);
+    }
+    
     const textStyles = {
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        color: 'white',
-        fontSize: '18px',
-        fontFamily: 'diaGothicLight',
+        fontSize: isHovered ? '25px' : '18px',
+        fontFamily: isHovered ? 'diaGothicBold' : 'diaGothicLight',
         padding: '21px',
-        // eslint-disable-next-line no-dupe-keys
-        color: '#797979'
+        color: isHovered ? '#FFFFFF' : '#797979'
     }
     const Styles = {
         float: 'right',
@@ -28,14 +38,24 @@ function Btn_Chat () {
         height: '100%', 
         objectFit: 'cover'
     }
+
     return(
         <div style={Styles}>
-            <img
-                src={Star}
-                alt="Btn Chat"
-                style={imgStyles}
-            />
-            <div style= {textStyles}>
+            <div
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                {isHovered ? (
+                <img src={Star2} alt="Btn Chat"style={imgStyles}/>) : (
+                    <img src={Star} alt="Btn Chat2"style={imgStyles}/>
+                )};
+            </div>
+            
+            <div 
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                style= {textStyles}
+            >
                 채팅
             </div>
         </div>
