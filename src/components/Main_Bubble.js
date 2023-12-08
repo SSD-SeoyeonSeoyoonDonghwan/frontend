@@ -1,7 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import Bubble from '../assets/img/Main_Bubble.png'
 
 function Main_Bubble () {
+
+    const [isHovered, setIsHovered] = useState(false);
+
+    function handleMouseEnter() {
+        setIsHovered(true);
+    }
+    function handleMouseLeave(){
+        setIsHovered(false);
+    }
 
     const textStyles = {
         position: 'absolute',
@@ -29,15 +38,23 @@ function Main_Bubble () {
     return(
         <div 
             style={Styles}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
-            <img
-                src={Bubble}
-                alt="Btn Dia"
-                style={imgStyles}
-            />
-            <div style= {textStyles}>
-                오늘 쓴 금액을 등록해보세요!
-            </div>
+            {isHovered && (
+                <div>
+                    <img
+                        src={Bubble}
+                        alt="Btn Dia"
+                        style={imgStyles}
+                    />
+                    <div style= {textStyles}>
+                    오늘 쓴 금액을 등록해보세요!
+                    </div>
+                </div>
+            )}
+            
+            
         </div>
     );
 }
