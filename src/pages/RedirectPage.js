@@ -17,7 +17,7 @@ function RedirectPage() {
 
   return (
     <div>
-        
+        <p>이얍</p>
     </div>    
     );
 }
