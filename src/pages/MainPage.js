@@ -10,6 +10,10 @@ import BtnDia from "../components/Btn_Dia"
 import BtnCircle from "../components/Btn_Circle"
 import Bubble from '../components/Main_Bubble'
 import MainHandling from '../components/Main_handling'
+import CardStack from "../components/CardStack";
+import DashBoard from "../components/Dashboard"
+import Card from "../components/Card";
+import CardContainer from "../components/CardContainer";
 
 function MainPage() {
 
@@ -40,7 +44,6 @@ function MainPage() {
           </div>
           <p className={style.text1}>오늘의 총 소비</p>
           <Bubble />
-
           <div className={style.calc}>
             <p className={style.text2}>180,800</p>
             <p className={style.text3}>won</p>
@@ -60,7 +63,11 @@ function MainPage() {
           <a href="./SignInPage3">회원가입3</a>
         </div>
         <BtnCircle />
-        
+        <div>
+          {/* <Card/> */}
+          <h1>이거 왜 안보여요</h1>
+          {/* <CardContainer /> */}
+        </div>
         <div className={style.right}>
           <BtnChat />
           <MainHandling />
