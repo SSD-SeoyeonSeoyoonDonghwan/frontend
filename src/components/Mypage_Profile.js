@@ -1,5 +1,6 @@
 import React from "react";
 import ProfileImg from "./ProfileImg";
+import ProfileName from "./ProfileName";
 
 function MyPage_Profile() {
     
@@ -30,11 +31,18 @@ function MyPage_Profile() {
         display: 'flex',
         justifyContent:'space-between',
     }
+    const ProfileNameStyles = {
+        marginLeft: '-800px',
+        marginTop: '35px',
+    }
 
     return (
         <div style={Styles}>
             <div style={ImgStyles}>
                 <ProfileImg/>
+            </div>
+            <div style={ProfileNameStyles}>
+                <ProfileName/>
             </div>
             <button style={BtnStyles}>수정하기</button>
         </div>
