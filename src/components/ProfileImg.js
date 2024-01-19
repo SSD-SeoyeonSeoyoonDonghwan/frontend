@@ -32,7 +32,6 @@ function ProfileImg () {
                     onClick={handleProfileClick}
                 >
                     {/* 여기에 프로필 이미지를 표시하거나 이미지 컴포넌트를 추가하세요. */}
-                    클릭!
                 </div>
 
                 {isModalOpen && (

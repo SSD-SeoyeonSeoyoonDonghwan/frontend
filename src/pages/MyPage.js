@@ -13,7 +13,6 @@ function MyPage() {
       <div className={style.box}>
         <ProfileBox />
         <div>
-          <h3> 여기는 My페이지</h3>
         </div>
         <div className={style.board}>
           <MyPageBox />
